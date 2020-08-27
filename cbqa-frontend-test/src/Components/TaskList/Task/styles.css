@@ -2,9 +2,8 @@ li {
 	position: relative;
 	margin-bottom: 1.4rem;
 	padding-left: 3rem;
-    text-align: justify;
-    list-style-type: none;
-
+	text-align: justify;
+	list-style-type: none;
 }
 
 li input {
@@ -91,7 +90,6 @@ li:hover .delete-task {
 	transition: 0.2s;
 }
 
-.checked{
+.checked {
 	text-decoration: line-through;
-
 }

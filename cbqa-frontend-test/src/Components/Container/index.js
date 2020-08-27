@@ -59,6 +59,7 @@ const Container = () => {
 				setSelected({ ...selected, items: newItems });
 			}
 		};
+
 	useEffect(() => {
 		getDAta();
 	}, []);
