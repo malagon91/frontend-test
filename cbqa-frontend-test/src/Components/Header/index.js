@@ -1,13 +1,13 @@
 import React from 'react';
 import './styles.css';
-const Header = ({ selected, limit }) => {
+const Header = ({ selected, limit, nextFn, oldFn }) => {
 	const { index, userId, items } = selected;
 
 	return (
 		<div className="header">
 			<i
 				className={`fas fa-chevron-left left ${index == 0 ? 'disabled' : ''}`}
-				onClick={() => {}}
+				onClick={oldFn}
 			></i>
 			<div className="center">
 				<p>{userId}</p>
@@ -17,7 +17,7 @@ const Header = ({ selected, limit }) => {
 				className={`fas fa-chevron-right right ${
 					index == limit ? 'disabled' : ''
 				}`}
-				onClick={() => {}}
+				onClick={nextFn}
 			></i>
 		</div>
 	);
