@@ -1,7 +1,8 @@
 import React from 'react';
+import './styles.css';
 
 const Task = ({ task, done, handleTaskDone, handleDeleteTask, index }) => (
-	<li>
+	<li className={done && 'checked'}>
 		<input
 			type="checkbox"
 			checked={done}

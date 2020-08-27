@@ -1,97 +1,9 @@
 .taskList {
 	width: 80%;
 	margin-top: 1.6rem;
+	margin-bottom: 1.6rem;
 	text-align: left;
 	list-style: none;
 	font-size: 1.5rem;
 	line-height: 1.8rem;
-}
-.taskList li {
-	position: relative;
-	margin-bottom: 1.4rem;
-	padding-left: 3rem;
-}
-
-.taskList li input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 1.8rem;
-	height: 1.8rem;
-	border-radius: 4px;
-	background-color: #484f59;
-	opacity: 0;
-	z-index: 1;
-	cursor: pointer;
-}
-
-.taskList .checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 1.8rem;
-	width: 1.8rem;
-	color: #888;
-	background-color: #484f59;
-	border: 2px solid #2f3339;
-	border-radius: 2px;
-	cursor: pointer;
-}
-
-.taskList input:hover ~ .checkmark {
-	background-color: #636a74;
-}
-
-.taskList .checkmark:after {
-	content: '';
-	position: absolute;
-	display: none;
-}
-
-.taskList input:checked ~ .checkmark:after {
-	display: block;
-}
-
-.taskList .checkmark:after {
-	left: 5px;
-	top: 0;
-	width: 5px;
-	height: 9px;
-	border: solid #ddd;
-	border-width: 0 2px 2px 0;
-	transform: rotate(45deg) scale(1);
-}
-
-@keyframes checkmarkZoom {
-	0% {
-		transform: rotate(45deg) scale(0.5);
-	}
-	50% {
-		transform: rotate(45deg) scale(2);
-	}
-	100% {
-		transform: rotate(45deg) scale(1);
-	}
-}
-
-.taskList .animate.checkmark:after {
-	animation: checkmarkZoom 0.5s;
-}
-
-.taskList li .delete-task {
-	color: #636a74;
-	margin-left: 2.2rem;
-	transform: scale(1.2) translateY(0.1rem);
-	cursor: pointer;
-	opacity: 0;
-}
-
-.taskList li .delete-task:hover {
-	color: #a31818;
-}
-
-.taskList li:hover .delete-task {
-	opacity: 1;
-	margin-left: 1.2rem;
-	transition: 0.2s;
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Fragment, useMemo } from 'react';
 import Header from '../Header';
+import TaskList from '../TaskList';
 const apiUrl = 'https://jsonplaceholder.typicode.com/todos/';
 const Container = () => {
 	const [data, setData] = useState([]),
@@ -40,6 +41,23 @@ const Container = () => {
 					const newIndex = selected.index - 1;
 					setSelected(setSelectedObj(newIndex, data[newIndex]));
 				}
+		},
+		doneTask = selec => {
+			if (selected.items) {
+				const localItems = [...selected.items];
+				const newItems = localItems.map((item, index) => ({
+					...item,
+					completed: index === selec ? !item.completed : item.completed
+				}));
+				setSelected({ ...selected, items: newItems });
+			}
+		},
+		deleteTask = sel => {
+			if (selected.items) {
+				const localItems = [...selected.items];
+				const newItems = localItems.filter((item, index) => index !== sel);
+				setSelected({ ...selected, items: newItems });
+			}
 		};
 	useEffect(() => {
 		getDAta();
@@ -52,6 +70,11 @@ const Container = () => {
 				limit={limit}
 				nextFn={nextItem}
 				oldFn={oldItem}
+			/>
+			<TaskList
+				handleTaskDone={doneTask}
+				handleDeleteTask={deleteTask}
+				items={selected.items || []}
 			/>
 		</Fragment>
 	);
