@@ -10,7 +10,7 @@ const Header = ({ selected, limit, nextFn, oldFn }) => {
 				onClick={oldFn}
 			></i>
 			<div className="center">
-				<p>{userId}</p>
+				<p>{`User ${userId}`}</p>
 				<p className="date">{`Total Childs ${items ? items.length : 0}`}</p>
 			</div>
 			<i
